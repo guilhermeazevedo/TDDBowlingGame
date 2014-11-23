@@ -99,4 +99,71 @@ public class TestesBowlingGame {
         assertEquals(12, jogo.retornanumeroderodadas(), 0.00001);
     }
     
+    @Test
+    public void TestaUltimaRodadaComStrikeComRodadasAMais(){
+        Jogador jogador = new Jogador("Jogador Forever Alone no Boliche");
+        Jogo jogo = new Jogo(jogador);
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(3, 7)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(6, 1)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(2, 2)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(7, 1)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(10, 0)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(5, 2)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(2, 5)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(4, 3)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(2, 8)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(10, 0)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(4, 1)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(6, 2)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(10, 0)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(4, 1)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(6, 2)));
+        
+        assertEquals(12, jogo.retornanumeroderodadas(), 0.00001);
+    }
+    
+    @Test
+    public void TestaUltimaRodadaComSpare(){
+        Jogador jogador = new Jogador("Jogador Forever Alone no Boliche");
+        Jogo jogo = new Jogo(jogador);
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(3, 7)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(6, 1)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(2, 2)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(7, 1)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(10, 0)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(5, 2)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(2, 5)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(4, 3)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(2, 8)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(8, 2)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(4, 1)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(6, 2)));
+        
+        assertEquals(11, jogo.retornanumeroderodadas(), 0.00001);
+    }
+    
+    @Test
+    public void TestaUltimaRodadaComSpareComRodadasAMais(){
+        Jogador jogador = new Jogador("Jogador Forever Alone no Boliche");
+        Jogo jogo = new Jogo(jogador);
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(3, 7)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(6, 1)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(2, 2)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(7, 1)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(10, 0)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(5, 2)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(2, 5)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(4, 3)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(2, 8)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(8, 2)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(4, 1)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(6, 2)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(7, 1)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(10, 0)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(5, 2)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(2, 5)));
+        
+        assertEquals(11, jogo.retornanumeroderodadas(), 0.00001);
+    }
+    
 }
