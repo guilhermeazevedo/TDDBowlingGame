@@ -27,7 +27,15 @@ public class Jogo {
             System.out.println("O jogador " + this.jogador.getNome() + " ja executou suas 10 rodadas!");
         } else {
             this.rodadas.add(rodada);
-            this.score = this.score + (rodada.getLance().getLance1() + rodada.getLance().getLance2());
+            if(retornanumeroderodadas() > 1){
+                if(this.rodadas.get(retornanumeroderodadas() - 2).isStrike()){
+                    this.score = this.score + ((rodada.getLance().getLance1() + rodada.getLance().getLance2()) * 2);
+                }else{
+                    this.score = this.score + (rodada.getLance().getLance1() + rodada.getLance().getLance2());
+                }
+            }else{
+                this.score = this.score + (rodada.getLance().getLance1() + rodada.getLance().getLance2());
+            }
         }
     }
 
