@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
  *
  * @author Guilherme Azevedo
  * 
- * Erros encontrados: 3
+ * Erros encontrados: 4
  * 
  */
 public class TestesBowlingGame {

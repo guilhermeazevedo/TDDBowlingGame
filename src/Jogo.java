@@ -15,7 +15,7 @@ public class Jogo {
 
     private Jogador jogador;
     private List<Rodada> rodadas;
-    private double score;
+    private int score;
 
     public Jogo(Jogador jogador) {
         this.jogador = jogador;
@@ -32,6 +32,7 @@ public class Jogo {
             System.out.println("O jogador " + this.jogador.getNome() + " ja fez executou suas 10 rodadas!");
         } else {
             this.rodadas.add(rodada);
+            this.score = this.score + (rodada.getLance().getLance1() + rodada.getLance().getLance2());
         }
     }
 
@@ -51,11 +52,11 @@ public class Jogo {
         this.rodadas = rodadas;
     }
 
-    public double getScore() {
+    public int getScore() {
         return score;
     }
 
-    public void setScore(double score) {
+    public void setScore(int score) {
         this.score = score;
     }
 
