@@ -11,11 +11,13 @@ public class Jogo {
     private Jogador jogador;
     private List<Rodada> rodadas;
     private int score;
+    private int rodadasamais;
 
     public Jogo(Jogador jogador) {
         this.jogador = jogador;
         this.rodadas = new ArrayList<>();
         this.score = 0;
+        this.rodadasamais = 0;
     }
 
     public int retornanumeroderodadas() {
@@ -23,14 +25,17 @@ public class Jogo {
     }
 
     public void novarodada(Rodada rodada) {
-        if (retornanumeroderodadas() >= 10) {
-            System.out.println("O jogador " + this.jogador.getNome() + " ja executou suas 10 rodadas!");
+        if (retornanumeroderodadas() >= (10 + this.rodadasamais)) {
+            System.out.println("O jogador " + this.jogador.getNome() + " ja executou todas as suas rodadas!");
         } else {
             this.rodadas.add(rodada);
             if(retornanumeroderodadas() > 1){
                 somascore(rodada.getLance(), this.rodadas.get(retornanumeroderodadas() - 2).isStrike());
             }else{
                 somascore(rodada.getLance(), false);
+            }
+            if(retornanumeroderodadas() == 10){
+                analisaultimarodada(rodada.getLance());
             }
         }
     }
@@ -40,6 +45,14 @@ public class Jogo {
             this.score = this.score + ((lance.getLance1() + lance.getLance2()) * 2);
         }else{
             this.score = this.score + (lance.getLance1() + lance.getLance2());
+        }
+    }
+    
+    public void analisaultimarodada(Lance lance){
+        if(lance.getLance1() == 10){
+            this.rodadasamais = 2;
+        }else if((lance.getLance1()+lance.getLance2()) == 10){
+            this.rodadasamais = 1;
         }
     }
 
@@ -65,6 +78,14 @@ public class Jogo {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public int getRodadasamais() {
+        return rodadasamais;
+    }
+
+    public void setRodadasamais(int rodadasamais) {
+        this.rodadasamais = rodadasamais;
     }
 
 }
