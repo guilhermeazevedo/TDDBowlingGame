@@ -29,7 +29,7 @@ public class Jogo {
 
     public void novarodada(Rodada rodada) {
         if (retornanumeroderodadas() >= 10) {
-            System.out.println("O jogador " + this.jogador.getNome() + " ja fez executou suas 10 rodadas!");
+            System.out.println("O jogador " + this.jogador.getNome() + " ja executou suas 10 rodadas!");
         } else {
             this.rodadas.add(rodada);
             this.score = this.score + (rodada.getLance().getLance1() + rodada.getLance().getLance2());
