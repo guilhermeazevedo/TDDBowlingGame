@@ -28,14 +28,18 @@ public class Jogo {
         } else {
             this.rodadas.add(rodada);
             if(retornanumeroderodadas() > 1){
-                if(this.rodadas.get(retornanumeroderodadas() - 2).isStrike()){
-                    this.score = this.score + ((rodada.getLance().getLance1() + rodada.getLance().getLance2()) * 2);
-                }else{
-                    this.score = this.score + (rodada.getLance().getLance1() + rodada.getLance().getLance2());
-                }
+                somascore(rodada.getLance(), this.rodadas.get(retornanumeroderodadas() - 2).isStrike());
             }else{
-                this.score = this.score + (rodada.getLance().getLance1() + rodada.getLance().getLance2());
+                somascore(rodada.getLance(), false);
             }
+        }
+    }
+    
+    public void somascore(Lance lance, boolean isStrike){
+        if(isStrike){
+            this.score = this.score + ((lance.getLance1() + lance.getLance2()) * 2);
+        }else{
+            this.score = this.score + (lance.getLance1() + lance.getLance2());
         }
     }
 
