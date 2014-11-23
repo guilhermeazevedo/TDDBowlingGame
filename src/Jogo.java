@@ -23,6 +23,14 @@ public class Jogo {
         this.rodadas = new ArrayList<>();
         this.score = 0;
     }
+    
+    public int retornanumeroderodadas(){
+        return this.rodadas.size();
+    }
+    
+    public void novarodada(Rodada rodada){
+        this.rodadas.add(rodada);
+    }
 
     public Jogador getJogador() {
         return jogador;

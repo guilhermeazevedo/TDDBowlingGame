@@ -20,18 +20,18 @@ public class TestesBowlingGame {
     public void Teste10Rodadas(){
         Jogador jogador = new Jogador("Jogador Forever Alone no Boliche");
         Jogo jogo = new Jogo(jogador);
-        jogo.novarodada(new Rodada(pedro, jogo.getRodadas().size() + 1, 4, 3));
-        jogo.novarodada(new Rodada(pedro, jogo.getRodadas().size() + 1, 6, 2));
-        jogo.novarodada(new Rodada(pedro, jogo.getRodadas().size() + 1, 2, 2));
-        jogo.novarodada(new Rodada(pedro, jogo.getRodadas().size() + 1, 7, 1));
-        jogo.novarodada(new Rodada(pedro, jogo.getRodadas().size() + 1, 10, 0));
-        jogo.novarodada(new Rodada(pedro, jogo.getRodadas().size() + 1, 4, 1));
-        jogo.novarodada(new Rodada(pedro, jogo.getRodadas().size() + 1, 7, 3));
-        jogo.novarodada(new Rodada(pedro, jogo.getRodadas().size() + 1, 4, 3));
-        jogo.novarodada(new Rodada(pedro, jogo.getRodadas().size() + 1, 9, 0));
-        jogo.novarodada(new Rodada(pedro, jogo.getRodadas().size() + 1, 2, 8));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(3, 7)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(6, 1)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(2, 2)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(7, 1)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(10, 0)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(5, 2)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(2, 5)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(4, 3)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(2, 8)));
+        jogo.novarodada(new Rodada(jogo.retornanumeroderodadas() + 1, jogador, new Lance(10, 0)));
         
-        assertEquals(10, jogo.getRodadas().size(), 0.00001);
+        assertEquals(10, jogo.retornanumeroderodadas(), 0.00001);
     }
     
 }
