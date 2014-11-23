@@ -7,13 +7,12 @@ import java.util.List;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Guilherme Azevedo
  */
 public class Jogo {
-    
+
     private Jogador jogador;
     private List<Rodada> rodadas;
     private double score;
@@ -23,13 +22,17 @@ public class Jogo {
         this.rodadas = new ArrayList<>();
         this.score = 0;
     }
-    
-    public int retornanumeroderodadas(){
+
+    public int retornanumeroderodadas() {
         return this.rodadas.size();
     }
-    
-    public void novarodada(Rodada rodada){
-        this.rodadas.add(rodada);
+
+    public void novarodada(Rodada rodada) {
+        if (retornanumeroderodadas() >= 10) {
+            System.out.println("O jogador " + this.jogador.getNome() + " ja fez executou suas 10 rodadas!");
+        } else {
+            this.rodadas.add(rodada);
+        }
     }
 
     public Jogador getJogador() {
